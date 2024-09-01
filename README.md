@@ -16,20 +16,30 @@ This project is part of the FreeCodeCamp Relational Database certification. The 
 
 The database consists of the following tables:
 
-1. **`elements`**:
-   - `atomic_number`: The atomic number of the element (Primary Key).
-   - `symbol`: The chemical symbol of the element.
-   - `name`: The name of the element.
+### `elements` Table
 
-2. **`properties`**:
-   - `atomic_number`: Foreign key referencing `elements`.
-   - `atomic_mass`: The atomic mass of the element.
-   - `melting_point_celsius`: The melting point of the element in Celsius.
-   - `boiling_point_celsius`: The boiling point of the element in Celsius.
+| Column Name    | Data Type | Constraints      |
+| -------------- | --------- | ---------------- |
+| `atomic_number`| INTEGER   | PRIMARY KEY      |
+| `symbol`       | VARCHAR   | UNIQUE, NOT NULL |
+| `name`         | VARCHAR   | UNIQUE, NOT NULL |
 
-3. **`types`**:
-   - `type_id`: Primary key for types of elements (e.g., metal, nonmetal).
-   - `type`: The type of the element.
+### `properties` Table
+
+| Column Name            | Data Type | Constraints                            |
+| ---------------------- | --------- | -------------------------------------- |
+| `atomic_number`        | INTEGER   | REFERENCES `elements(atomic_number)`   |
+| `atomic_mass`          | DECIMAL   | NOT NULL                               |
+| `melting_point_celsius`| DECIMAL   | NOT NULL                               |
+| `boiling_point_celsius`| DECIMAL   | NOT NULL                               |
+| `type_id`              | INTEGER   | REFERENCES `types(type_id)`, NOT NULL  |
+
+### `types` Table
+
+| Column Name | Data Type | Constraints  |
+| ----------- | --------- | ------------ |
+| `type_id`   | INTEGER   | PRIMARY KEY  |
+| `type`      | VARCHAR   | NOT NULL     |
 
 ## Usage
 
