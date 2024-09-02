@@ -2,6 +2,11 @@
 
 This project is part of the FreeCodeCamp Relational Database certification. The objective was to build a database that stores information about the elements in the periodic table and create a Bash script that interacts with this database to retrieve and display data in a user-friendly format.
 
+
+![diagram-export-02-09-2024-14_30_54](https://github.com/user-attachments/assets/748dca59-8ced-47b3-992a-89074b2fb8e5)
+
+
+
 ## Project Structure
 
 - **Database**: The database is managed using PostgreSQL.
